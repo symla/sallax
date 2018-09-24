@@ -253,13 +253,13 @@ function sallax_update_element(wrapper) {
 
     var viewport_center_pos = s_viewport_height*wrapper.vcenter;
 
-    var u_corrected = (viewport_center_pos-element_center_pos_corrected)/(s_viewport_height);
+    var u_corrected = (viewport_center_pos-element_center_pos_corrected)/(s_viewport_height*wrapper.vcenter);
 
     if ( wrapper.alpha ) {
         var percentage;
 
         if ( wrapper.alpha_actual ) {
-            var u_actual = (viewport_center_pos-element_center_pos_actual)/(s_viewport_height);
+            var u_actual = (viewport_center_pos-element_center_pos_actual)/(s_viewport_height*wrapper.vcenter);
             percentage = 1-Math.abs(u_actual);
         } else {
             percentage = 1-Math.abs(u_corrected);
